@@ -1,0 +1,33 @@
+---
+title: Home
+layout: default
+---
+<section>
+	<ul>
+		<li><a href="/about_me">About Me</a></li>
+		<li><a href="assets/pdf/resume_david_folarin.pdf">Résumé</a></li>
+	</ul>
+</section>
+
+<!--
+<section>
+	<h2><a href="/blog">Blog</a></h2>
+		<ul>
+			{% for post in site.posts limit:8 %}
+			<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+			{% endfor %}
+		</ul>
+</section>
+-->
+
+{% assign categories = site.projects | group_by: "category" %}
+{% for category in categories %}
+<section>
+	<h2>{{ category.name }}</h2>
+	<ul>
+		{% for project in category.items %}
+		<li><a href="{{ project.url }}">{{ project.name }}</a></li>
+		{% endfor %}
+	</ul>
+</section>
+{% endfor %}
