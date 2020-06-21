@@ -14,7 +14,7 @@ I also built a [sister chrome extension that converts the NYT sudoku puzzles int
 The UI is basically identical to the NYT sudoku page.
 
 Initially I thought about using [WebRTC](https://webrtc.org/) because I had some false notion that I wouldn't need a server but after a little research
-that said otherwise I stuck to websockets, using the (socket.io)[https://socket.io/] library. I've used socket.io once before to build
+that said otherwise I stuck to websockets, using the [socket.io](https://socket.io/) library. I've used socket.io once before to build
 my [pandemic board game clone](/projects/pandemic_clone), so I was confident that I'd avoid the usual attendent footguns when using an unfamiliar library.
 As it turned out, the most difficult thing was writing the markup and css to replicate the [NYT Sudoku UI](https://www.nytimes.com/puzzles/sudoku/easy).
 I ended up implementing the entire thing with css [vmin units](https://css-tricks.com/fun-viewport-units/) to avoid alot of tricky layout math. 
