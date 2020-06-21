@@ -21,7 +21,7 @@ While selecting which hands to open (make the first bet), call (match the curren
 re-raise, 3-bet, 4-bet, limp behind (there are a surprisingly large number of actions you can take before any community cards are shown), 
 is complicated and depends on many dynamic factors, a rough set of hands, or range, can be usefull when getting your bearings. 
 
-The Range Trainer app is meant to ease the process. I started it as an alternative to filling up an anki deck with tons of 
+The Range Trainer app is meant to ease the process. I started it as an alternative to filling up an [Anki](https://apps.ankiweb.net/) deck with tons of 
 notes. It employs spaced repetition and a custon range editor. I've started to add more questions, primarily based
 on odds calculation into the mix. I hope to eventually build out an entire virtual table, where different 
 poker sitations are rapidly presented as a way to train seriously away from the table. 
