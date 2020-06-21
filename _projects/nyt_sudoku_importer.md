@@ -11,7 +11,7 @@ While building my [sudoku with friends app](http://sudoku-with-friends.com/), I 
 loading sudoku puzzles into the app. At first I thought I would add a function to the backend that scrapes the 
 three [daily New York Times Sudoku puzzles](https://www.nytimes.com/puzzles/sudoku/easy) and offer them as options to users,
 since thats the puzzle I usually do. This meant bringing in extra dependencies like [axios](https://www.npmjs.com/package/axios), for
-making page requests. In fact, the NYT sudoku puzzle seems to make some Ajax requests to set everything up, so a plain get
+making page requests. In fact, the NYT sudoku puzzle seems to make some [Ajax](https://www.w3schools.com/xml/ajax_intro.asp) requests to set everything up, so a plain get
 request from axios won't cut it. I'd need to use a more complex solution like [pupeteer](https://github.com/puppeteer/puppeteer), which
 would pull along an entire chrome binary into the mix. Yuck. 
 
