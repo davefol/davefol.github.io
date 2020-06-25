@@ -195,6 +195,10 @@ a {
 	@include link-colors($c-black, $c-dark, $c-medium, $c-black, $c-dark);
 }
 
+.post-date {
+	color: $c-medium;
+}
+
 pre {
 	margin-left: 1rem;
 	font-family: menlo, monospace;
