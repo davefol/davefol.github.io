@@ -194,3 +194,29 @@ pre {
 	font-family: menlo, monospace;
 	font-size: 0.66rem;
 }
+
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+
+.footnotes p {
+	font-size: small;
+	margin: 0;
+}
+
+ol {
+	list-style: decimal-leading-zero;
+}
+
+code {
+	font-size: smaller;
+	font-family: $alt-font;
+}
+
+code.language-plaintext {
+	font-size: small;
+	background: #e6e6e6;
+	border-radius: 4px;
+	padding: 2px;
+}
