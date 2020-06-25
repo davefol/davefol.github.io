@@ -46,7 +46,7 @@ I wen't ahead and wrote a `observable::Csv` struct that implements
 
 So, to actually get a usable `Sample` you can do something like. 
 
-```{Rust}
+```rust
 let mut sample = Sample::new();
         sample.observe(
             CsvBuilder::new()
@@ -63,7 +63,7 @@ may be the name, group membership, or other meta data. `Csv` will handle
 turning all of that into well-behaved `Observation`s. 
 
 In practice, it looks like this:
-```
+```rust
 match &fields[i] {
 	Field::Name => {
 	    individual = field.to_string();
