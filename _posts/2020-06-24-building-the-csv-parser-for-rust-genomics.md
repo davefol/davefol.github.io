@@ -16,12 +16,12 @@ The authors describe it as a toolkit for doing genetics on organisms with
 R genentics/genomics ecosystem, reusing many core data structures.
 
 I think that Rust needs libraries like poppr and ecosystems like R. 
-I dont ~love~ R as a language[^3] but I also can't remember the last time
+I dont *love* R as a language[^3] but I also can't remember the last time
 I reached for a tool and it wasn't there. R is what I like to call, 
 an "at hand"[^4] langauge. Some languages are "at hand" by having
 a bloated standard library, some, like Rust, have an [awesome package 
 manager](https://crates.io/). Well that last statement isn't exactly true. While Rust
-~does~ have an awesome package handler, it's not full to the brim like
+*does* have an awesome package handler, it's not full to the brim like
 [CRAN](https://cran.r-project.org/) is. 
 
 Anyway, this is all a long way of saying that I'm writing a genomics library
