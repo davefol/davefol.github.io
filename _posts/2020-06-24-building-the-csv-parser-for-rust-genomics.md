@@ -26,7 +26,7 @@ manager](https://crates.io/). Well that last statement isn't exactly true. While
 
 Anyway, this is all a long way of saying that I'm writing a genomics library
 for rust. It's on [Crates.io](https://crates.io/) allready, but It will
-be at a 0.X verstion for a time while I fill it up with usefull tools.
+be at a 0.X version for a time while I fill it up with usefull tools.
 
 I just finished what I hope is a half-decent[^5] API for ingesting data
 into the library. It works like this: 
