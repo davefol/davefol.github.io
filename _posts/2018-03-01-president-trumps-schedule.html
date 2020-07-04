@@ -1,0 +1,235 @@
+---
+layout: post
+title: President Trump's Schedule
+date: 2018-03-01
+---
+<style>
+#tooltip {
+        position: absolute;
+height: auto;
+width: auto;
+padding: 10px;
+background-color: white;
+-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+-moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+pointer-events: none;
+transition 0.3s;
+}
+
+#tooltip.hidden {
+opacity: 0;
+transition: 0.3s;
+}
+
+#tooltip {
+margin: 0;
+text-transform: capitalize;
+}
+
+#tooltip > p {
+	margin: 2px;
+	font-size: 0.5rem;
+}
+.event-block {
+        transition: 0.3s;
+}
+
+.event-block:hover {
+        opacity: 0.7;
+}
+</style>
+			<p>
+				Click on an event to highlight all events that belong to that event's group.
+			</p>
+		
+		<div class="visualization">
+		<div id="tooltip" class="hidden">
+			<p><span id="value">test</span></p>
+		</div>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+		<script type="text/javascript">
+			var Vis = {};
+			// Set constants
+			Vis.padding = 50;
+			Vis.height = 2000;
+			Vis.width = 1200;
+
+			// Time format
+			var parseTime = d3.timeParse("%A, %B %e, %Y %I:%M %p");
+
+			// Use the time format to parse time values
+			var rowConverter = function(d)
+			{
+				var currentTime = parseTime(d.time);
+				if (!currentTime) {
+					return 
+					{
+						Time: 0
+					};
+				}
+
+				return {
+					Time: new Date(1900, 0, 1, currentTime.getHours(), currentTime.getMinutes()),
+					Date: new Date(currentTime.getYear()+ 1900, currentTime.getMonth(), currentTime.getDate()),
+					Duration: d.duration,
+					Event: d.event,
+					KGroup: d.kgroup
+				};
+			};
+
+			var getTimeScale = function(d){
+				return d3.scaleTime()
+				.domain([
+					d3.min(d, x => x.Date),
+					d3.max(d, x => x.Date)
+					])
+					.range([Vis.padding, Vis.height - Vis.padding]);}
+
+			
+
+			
+			Vis.midnight = new Date(1900, 0, 1, 0, 0);
+			// Vis.xScale = d3.scaleTime()
+			// 	.domain([Vis.midnight, d3.timeDay.offset(Vis.midnight,1)])
+			//	.range([Vis.padding, Vis.width - Vis.padding]);
+
+			Vis.makeGraphic = function(d){
+				Vis.svg = d3.select("body").select(".visualization")
+				.append("svg")
+				.attr("id","svg")
+				.attr("width", Vis.width)
+				.attr("height",Vis.height);
+
+				Vis.xAxis = d3.axisTop().
+					scale(Vis.xScale);
+
+				Vis.yAxis = d3.axisLeft()
+				.scale(Vis.yScale)
+				.tickFormat(d3.timeFormat("%B %d, %Y"));
+
+				Vis.rectangles = Vis.svg.selectAll("rect")
+				.data(Vis.dataset)
+				.enter()
+				.append("rect")
+				.classed("event-block",true)
+				.on("mouseover", function(d)
+					{
+						var xPosition = parseFloat(d3.select(this).attr("x")) + document.getElementById('svg').getBoundingClientRect().left + window.scrollX;
+						var yPosition = parseFloat(d3.select(this).attr("y")) + document.getElementById('svg').getBoundingClientRect().top + window.scrollY;
+						console.log(yPosition);
+
+						d3.select("#tooltip")
+							.style("left", `${xPosition}px`)
+							.style("top", `${yPosition + 35}px`)
+						.select("#value")
+						.text(d3.timeFormat("%I:%M %p")(d.Time) + ": " + d.Event.toLowerCase());
+
+						d3.select("#tooltip").classed("hidden", false);
+					})
+				.on("mouseout", function(d)
+					{
+						d3.select("#tooltip").classed("hidden", true);
+					});
+
+				Vis.rectangles
+				.attr("x", function(d)
+					{
+						return Vis.xScale(d.Time);
+					})
+				.attr("y", function(d, i)
+					{
+						return Vis.yScale(d.Date);
+					})
+				.attr("height", 20)
+				.attr("width", function(d)
+					{
+						return Vis.xScale(d3.timeMinute.offset(d.Time, d.Duration)) - Vis.xScale(d.Time);
+					})
+				.attr("fill", function(d,i)
+					{
+						return Vis.colorScale(d.KGroup);
+					})
+				.attr("event", d => d.Event)
+				.attr("date", d => d.Date);
+
+				Vis.clickedRectangle = false;
+				Vis.selectedGroup = undefined;
+				Vis.rectangles
+				.on("click", function(d)
+					{
+						if (Vis.clickedRectangle == false || Vis.selectedGroup != d.KGroup){
+							Vis.rectangles
+							.attr("fill", function(i)
+								{
+									return Vis.kGroupColorScales[d.KGroup](i.Event);
+								})
+							Vis.clickedRectangle = true;
+							Vis.selectedGroup = d.KGroup;
+						} else {
+							Vis.rectangles
+							.attr("fill", x => Vis.colorScale(x.KGroup));
+							Vis.clickedRectangle = false;
+							Vis.selectedGroup = undefined;
+						}
+					})
+
+				Vis.svg.append("g")
+				.attr("transform", "translate(0,20)")
+				.call(Vis.xAxis);
+
+				Vis.svg.append("g")
+				.attr("transform", "translate(120,0)")
+				.call(Vis.yAxis);
+				
+			}
+
+			// Load the dataset
+			d3.json("/assets/trump_schedule.json").then(function(data)
+				{
+
+					Vis.dataset = data.map(rowConverter).filter(d => d);
+					Vis.dataset.sort((a,b) => a.Date - b.Date);
+					// Vis.yScale = getTimeScale(Vis.dataset);
+
+					Vis.xScale = d3.scaleTime()
+					.domain([
+						d3.min(Vis.dataset, x => x.Time),
+						d3.max(Vis.dataset, x => x.Time)])
+					.range([Vis.padding + 80, Vis.width - Vis.padding]);
+
+					Vis.barHeight = 30;
+					Vis.dates = [];
+					for (i = 0; i<50; i++)
+					{
+						Vis.dates.push(i*Vis.barHeight);
+					}
+					Vis.yScale = d3.scalePoint()
+						.domain(Vis.dataset.map(x => x.Date))
+						.range([Vis.padding, Vis.height - Vis.padding]);;
+
+					Vis.wScale = d3.scaleLinear()
+					.domain([
+						d3.min(Vis.dataset, x => x.Duration),
+						d3.max(Vis.dataset, x => x.Duration)
+						])
+					.range([0,500]);
+					
+					Vis.colorScale = d3.scaleOrdinal()
+					.range(d3.schemeSet3);
+
+
+					Vis.numberOfKGroups = Vis.dataset.map(x => x.KGroup).reduce((x,y) => Math.max(x,y));
+					Vis.kGroupColorScales = [];
+					Vis.gray = "#D6D6D6";
+					for (i = 0; i < Vis.numberOfKGroups; i++){
+						Vis.kGroupColorScales.push(d3.scaleOrdinal().domain(Vis.dataset.filter(x => x.KGroup == i).map(x => x.Event)).range(d3.schemeSet3).unknown(Vis.gray));
+					
+					}
+
+					Vis.makeGraphic(Vis.dataset);
+				});
+		</script>
+		</div>
+
