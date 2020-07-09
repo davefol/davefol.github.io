@@ -4,7 +4,7 @@ title: Programming My Diary
 date: 2020-07-09 17:56 -0400
 ---
 
-I don't think I'm alone when I say that I gro through ebbs and flows with regards
+I don't think I'm alone when I say that I go through ebbs and flows with regards
 to how much I have on my plate at one time. Between work, open source, reading, 
 and watching youtube courses, there are a lot of things that fill my day up, 
 not even counting maintaing relationships, doing chores, and taking care of the dog. 
