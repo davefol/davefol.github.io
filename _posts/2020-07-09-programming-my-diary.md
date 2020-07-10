@@ -4,6 +4,8 @@ title: Programming My Diary
 date: 2020-07-09 17:56 -0400
 ---
 
+[See part 2 here](/2020/07/10/programming-my-diary-processing-emails-with-imap.html).
+
 I don't think I'm alone when I say that I go through ebbs and flows with regards
 to how much I have on my plate at one time. Between work, open source, reading, 
 and watching youtube courses, there are a lot of things that fill my day up, 
@@ -39,3 +41,5 @@ to some json data. I could even tie in data from my Anki, or git - so that when 
 or commit code or even text to some document, the changes could be reflected in the visualization. 
 
 It could be hosted right here, on my website. 
+
+[See part 2 here](/2020/07/10/programming-my-diary-processing-emails-with-imap.html).

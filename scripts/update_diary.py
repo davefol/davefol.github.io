@@ -14,27 +14,19 @@ from pathlib import Path
 import errno
 from typing import Tuple
 
-def as_re_option(x): 
+
+def as_re_option(x):
     return "|".join([f"[{s[0].upper()}{s[0].lower()}]{s[1:]}" for s in x])
 
-PROJECT_TYPE_RE = as_re_option([
-    "series",
-    "show",
-    "playlist",
-    "course",
-    "class",
-    "book",
-    "project"
-])
+
+PROJECT_TYPE_RE = as_re_option(
+    ["series", "show", "playlist", "course", "class", "book", "project"]
+)
 
 
-PROGRESS_TYPES_RE = as_re_option([
-    "read",
-    "watched",
-    "finished",
-    "completed",
-    "listened to",
-])
+PROGRESS_TYPES_RE = as_re_option(
+    ["read", "watched", "finished", "completed", "listened to",]
+)
 
 # ET => Entry type
 BOUNDED_PROJECT_ET = "bounded projects"
@@ -47,29 +39,37 @@ NOTE_ET = "note"
 # 2 => parts
 # 3 => unit
 # Ex: I started course stanford data sci with 15 sections.
-NEW_BOUNDED_PROJECT_RE = re.compile(fr"^(?:I )?(?:[Nn]ew|[Ss]tarted|[Bb]egan) (?:{PROJECT_TYPE_RE}) (.+) with (\d+) (\w+)")
+NEW_BOUNDED_PROJECT_RE = re.compile(
+    fr"^(?:I )?(?:[Nn]ew|[Ss]tarted|[Bb]egan) (?:{PROJECT_TYPE_RE}) (.+) with (\d+) (\w+)"
+)
 
 # 1 => name
 # 2 => parts
 # Ex: I read moby dick to page 100.
-BOUNDED_PROGRESS_RE = re.compile(fr"^(?:I )?(?:{PROGRESS_TYPES_RE}) (.+) (?:to|until) \w+ (\d+)") 
+BOUNDED_PROGRESS_RE = re.compile(
+    fr"^(?:I )?(?:{PROGRESS_TYPES_RE}) (.+) (?:to|until) \w+ (\d+)"
+)
 
 # 1 => parts
 # 2 > name
 # Ex: I did 3 hours of meditation.
-OPEN_ENDED_PROGRESS_RE = re.compile(r"^(?:I )?(?:[Dd]id|[Cc]omplet(?:ed)?|[Ff]inish(?:ed)?) (\d+) \w+ of (\w+)")
+OPEN_ENDED_PROGRESS_RE = re.compile(
+    r"^(?:I )?(?:[Dd]id|[Cc]omplet(?:ed)?|[Ff]inish(?:ed)?) (\d+) \w+ of (\w+)"
+)
 
 
 class Diary:
-    class error(Exception): pass
+    class error(Exception):
+        pass
+
     def __init__(self):
-        if (diary_path := os.environ.get('DIARY_FILE')) is None:
+        if (diary_path := os.environ.get("DIARY_FILE")) is None:
             raise self.error("Please set the 'DIARY_FILE' environment variable")
 
         if not os.path.exists(os.path.dirname(diary_path)):
             try:
                 os.makedirs(os.path.dirname(diary_path))
-            except OSError as exc: # Guard against race condition
+            except OSError as exc:  # Guard against race condition
                 if exc.errno != errno.EEXIST:
                     raise
 
@@ -77,7 +77,11 @@ class Diary:
             with open(diary_path) as f:
                 self.__storage = json.load(f)
         else:
-            self.__storage = {BOUNDED_PROJECT_ET: dict(), OPEN_ENDED_PROJECT_ET: dict(), NOTE_ET: list()}
+            self.__storage = {
+                BOUNDED_PROJECT_ET: dict(),
+                OPEN_ENDED_PROJECT_ET: dict(),
+                NOTE_ET: list(),
+            }
 
         self.__diary_path = diary_path
 
@@ -94,7 +98,7 @@ class Diary:
         return json.dumps(self.__storage)
 
     def flush(self) -> None:
-        with open(self.__diary_path, 'w') as f:
+        with open(self.__diary_path, "w") as f:
             json.dump(self.__storage, f, indent=4, sort_keys=True, default=str)
 
     @staticmethod
@@ -105,46 +109,76 @@ class Diary:
         returns a tuple (string, dict) where [0] is the type of entry and [1] is the entry
         """
         if expr := NEW_BOUNDED_PROJECT_RE.match(s):
-            return (BOUNDED_PROJECT_ET, { 'name': expr[1], 'parts': int(expr[2]), 'unit': expr[3], 'date': dt })
+            return (
+                BOUNDED_PROJECT_ET,
+                {"name": expr[1], "parts": int(expr[2]), "unit": expr[3], "date": dt},
+            )
         elif expr := BOUNDED_PROGRESS_RE.match(s):
-            return (BOUNDED_PROGRESS_ET, { 'name': expr[1], 'parts': int(expr[2]), 'date': dt })
+            return (
+                BOUNDED_PROGRESS_ET,
+                {"name": expr[1], "parts": int(expr[2]), "date": dt},
+            )
         elif expr := OPEN_ENDED_PROGRESS_RE.match(s):
-            return (OPEN_ENDED_PROGRESS_ET, { 'name': expr[2], 'parts': int(expr[1]), 'date': dt})
+            return (
+                OPEN_ENDED_PROGRESS_ET,
+                {"name": expr[2], "parts": int(expr[1]), "date": dt},
+            )
         else:
-            return (NOTE_ET, {'text': s, 'date': dt})
+            return (NOTE_ET, {"text": s, "date": dt})
 
     def __insert(self, entry_type, entry):
         if entry_type == BOUNDED_PROJECT_ET:
-            self.__storage[BOUNDED_PROJECT_ET][entry["name"].lower().strip()] = {"parts": entry["parts"], "unit": entry["unit"], "progress": list(), "date": entry["date"]}
+            self.__storage[BOUNDED_PROJECT_ET][entry["name"].lower().strip()] = {
+                "parts": entry["parts"],
+                "unit": entry["unit"],
+                "progress": list(),
+                "date": entry["date"],
+            }
         elif entry_type == BOUNDED_PROGRESS_ET:
             try:
-                self.__storage[BOUNDED_PROJECT_ET][entry["name"].lower().strip()]["progress"].append({"parts": entry["parts"], "date": entry["date"]})
+                self.__storage[BOUNDED_PROJECT_ET][entry["name"].lower().strip()][
+                    "progress"
+                ].append({"parts": entry["parts"], "date": entry["date"]})
             except KeyError as e:
-                print(f"Attempted to add BOUNDED_PROGRESS to unknown BOUNDED_PROJECT: {entry['name']}")
+                print(
+                    f"Attempted to add BOUNDED_PROGRESS to unknown BOUNDED_PROJECT: {entry['name']}"
+                )
         elif entry_type == OPEN_ENDED_PROGRESS_ET:
-            if self.__storage[OPEN_ENDED_PROJECT_ET][entry["name"].lower().strip()] is None:
-                self.__storage[OPEN_ENDED_PROJECT_ET][entry["name"].lower().strip()] = {"progress": list(), "date": entry["date"]}
-            self.__storage[OPEN_ENDED_PROJECT_ET][entry["name"].lower().strip()]["progress"].append({"parts": entry["parts"], "date": entry["date"]})
+            if (
+                self.__storage[OPEN_ENDED_PROJECT_ET][entry["name"].lower().strip()]
+                is None
+            ):
+                self.__storage[OPEN_ENDED_PROJECT_ET][entry["name"].lower().strip()] = {
+                    "progress": list(),
+                    "date": entry["date"],
+                }
+            self.__storage[OPEN_ENDED_PROJECT_ET][entry["name"].lower().strip()][
+                "progress"
+            ].append({"parts": entry["parts"], "date": entry["date"]})
         elif entry_type == NOTE_ET:
-            self.__storage[NOTE_ET].append(dict(text=entry["text"].strip(), date=entry["date"]))
+            self.__storage[NOTE_ET].append(
+                dict(text=entry["text"].strip(), date=entry["date"])
+            )
         else:
             raise NotImplementedError
 
+
 class EmailConnection:
-    class error(Exception): pass
+    class error(Exception):
+        pass
+
     def __init__(self):
-        if (username := os.environ.get('DIARY_USERNAME')) is None:
+        if (username := os.environ.get("DIARY_USERNAME")) is None:
             raise self.error("Please set the 'DIARY_USERNAME' environment variable")
-            
-        if (password := os.environ.get('DIARY_PASSWORD')) is None:
+
+        if (password := os.environ.get("DIARY_PASSWORD")) is None:
             raise self.error("Please set the 'DIARY_PASSWORD' environment variable")
 
-        if (server := os.environ.get('DIARY_SERVER')) is None:
+        if (server := os.environ.get("DIARY_SERVER")) is None:
             raise self.error("Please set the 'DIARY_SERVER' environment variable")
 
-        if (sender := os.environ.get('DIARY_SENDER')) is None:
+        if (sender := os.environ.get("DIARY_SENDER")) is None:
             raise self.error("Please set the 'DIARY_SENDER' environment variable")
-
 
         self.__imap = imaplib.IMAP4_SSL(server)
 
@@ -158,7 +192,7 @@ class EmailConnection:
             self.__imap.logout()
             raise self.error("Unable to read INBOX")
 
-        self.sender = sender 
+        self.sender = sender
 
     def messages(self):
         return self.__imap.search(None, f'UNSEEN FROM "{self.sender}"')
@@ -177,21 +211,22 @@ class EmailDiaryClient:
             print(message_id)
             if message_id:
                 for message_id in message_id.split():
-                    _, data = self.email_connection.imap.fetch(message_id, '(RFC822)')
+                    _, data = self.email_connection.imap.fetch(message_id, "(RFC822)")
                     message = email.message_from_bytes(data[0][1])
                     for part in message.walk():
                         if (payload := part.get_payload(decode=True)) is not None:
-                            soup = BeautifulSoup(payload.decode(), 'html.parser')
+                            soup = BeautifulSoup(payload.decode(), "html.parser")
                             if (body := soup.body) is not None:
                                 entry_text = body.text.strip()
-                                if date_tuple := email.utils.parsedate_tz(message['Date']):
-                                    local_date = datetime.datetime.fromtimestamp(email.utils.mktime_tz(date_tuple))
+                                if date_tuple := email.utils.parsedate_tz(
+                                    message["Date"]
+                                ):
+                                    local_date = datetime.datetime.fromtimestamp(
+                                        email.utils.mktime_tz(date_tuple)
+                                    )
                                 else:
                                     local_date = datetime.datetime.now()
                                 yield entry_text, local_date
-
-
-
 
 
 if __name__ == "__main__":
@@ -204,4 +239,3 @@ if __name__ == "__main__":
     CONNECTION.imap.close()
     CONNECTION.imap.logout()
     DIARY.flush()
-    
