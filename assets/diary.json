@@ -48,6 +48,10 @@
         {
             "date": "2020-07-11 19:11:07",
             "text": "I ordered a custom hoodie with the text \"Team Allison.\" on it. I specifically got it on a 4000ind blank after doing some research. Seems like those are the super thick ones I like."
+        },
+        {
+            "date": "2020-07-11 19:54:53",
+            "text": "Fiddling with the update_diary script and automating the commit changes."
         }
     ],
     "open ended projects": {},
@@ -111,6 +115,10 @@
                 {
                     "text": "I ordered a custom hoodie with the text \"Team Allison.\" on it. I specifically got it on a 4000ind blank after doing some research. Seems like those are the super thick ones I like.",
                     "time": 1594509067000.0
+                },
+                {
+                    "text": "Fiddling with the update_diary script and automating the commit changes.",
+                    "time": 1594511693000.0
                 }
             ],
             "week": 202027,
