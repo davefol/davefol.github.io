@@ -1,24 +1,36 @@
 {
     "bounded projects": {
+        "calculus in a nutshell": {
+            "date": "2020-07-11 19:05:47",
+            "name": "calculus in a nutshell",
+            "parts": 19,
+            "progress": [],
+            "unit": "parts"
+        },
         "mathematics for 3d": {
-            "date": "2020-07-10 14:54:47",
+            "date": "2020-07-11 19:02:56",
+            "name": "mathematics for 3D",
             "parts": 342,
-            "progress": [
-                {
-                    "date": "2020-07-10 14:55:40",
-                    "parts": 10
-                }
-            ],
+            "progress": [],
+            "unit": "pages"
+        },
+        "monetary history": {
+            "date": "2020-07-11 19:08:15",
+            "name": "monetary history",
+            "parts": 700,
+            "progress": [],
             "unit": "pages"
         },
         "pytorch": {
             "date": "2020-07-11 19:06:55",
+            "name": "pytorch",
             "parts": 477,
             "progress": [],
             "unit": "pages"
         },
         "the functional art": {
             "date": "2020-07-11 19:02:31",
+            "name": "the functional art",
             "parts": 350,
             "progress": [],
             "unit": "pages"
@@ -28,7 +40,81 @@
         {
             "date": "2020-07-11 19:09:37",
             "text": "Yesterday Cliff (ParisXArt) sent me a voice message saying how much he liked the album. Today I put together 5 songs that are in progress for us to collaborate on. He'll be in the studio Monday."
+        },
+        {
+            "date": "2020-07-11 19:09:37",
+            "text": "Yesterday Cliff (ParisXArt) sent me a voice message saying how much he liked the album. Today I put together 5 songs that are in progress for us to collaborate on. He'll be in the studio Monday."
+        },
+        {
+            "date": "2020-07-11 19:11:07",
+            "text": "I ordered a custom hoodie with the text \"Team Allison.\" on it. I specifically got it on a 4000ind blank after doing some research. Seems like those are the super thick ones I like."
         }
     ],
-    "open ended projects": {}
+    "open ended projects": {},
+    "timeline": {
+        "2020270": {
+            "entries": [],
+            "week": 202027,
+            "weekday": 0
+        },
+        "2020271": {
+            "entries": [],
+            "week": 202027,
+            "weekday": 1
+        },
+        "2020272": {
+            "entries": [],
+            "week": 202027,
+            "weekday": 2
+        },
+        "2020273": {
+            "entries": [],
+            "week": 202027,
+            "weekday": 3
+        },
+        "2020274": {
+            "entries": [],
+            "week": 202027,
+            "weekday": 4
+        },
+        "2020275": {
+            "entries": [],
+            "week": 202027,
+            "weekday": 5
+        },
+        "2020276": {
+            "entries": [
+                {
+                    "text": "New book the functional art with 350 pages.",
+                    "time": 1594508551000.0
+                },
+                {
+                    "text": "New book mathematics for 3D with 342 pages.",
+                    "time": 1594508576000.0
+                },
+                {
+                    "text": "New course calculus in a nutshell with 19 parts.",
+                    "time": 1594508747000.0
+                },
+                {
+                    "text": "New book pytorch with 477 pages.",
+                    "time": 1594508815000.0
+                },
+                {
+                    "text": "New book monetary history with 700 pages.",
+                    "time": 1594508895000.0
+                },
+                {
+                    "text": "Yesterday Cliff (ParisXArt) sent me a voice message saying how much he liked the album. Today I put together 5 songs that are in progress for us to collaborate on. He'll be in the studio Monday.",
+                    "time": 1594508977000.0
+                },
+                {
+                    "text": "I ordered a custom hoodie with the text \"Team Allison.\" on it. I specifically got it on a 4000ind blank after doing some research. Seems like those are the super thick ones I like.",
+                    "time": 1594509067000.0
+                }
+            ],
+            "week": 202027,
+            "weekday": 6
+        }
+    }
 }
