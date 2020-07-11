@@ -10,8 +10,25 @@
                 }
             ],
             "unit": "pages"
+        },
+        "pytorch": {
+            "date": "2020-07-11 19:06:55",
+            "parts": 477,
+            "progress": [],
+            "unit": "pages"
+        },
+        "the functional art": {
+            "date": "2020-07-11 19:02:31",
+            "parts": 350,
+            "progress": [],
+            "unit": "pages"
         }
     },
-    "note": [],
+    "note": [
+        {
+            "date": "2020-07-11 19:09:37",
+            "text": "Yesterday Cliff (ParisXArt) sent me a voice message saying how much he liked the album. Today I put together 5 songs that are in progress for us to collaborate on. He'll be in the studio Monday."
+        }
+    ],
     "open ended projects": {}
 }
