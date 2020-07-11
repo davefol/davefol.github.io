@@ -1,0 +1,49 @@
+---
+title: Diary
+layout: default
+---
+
+<style>
+#diary {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: flex-start;
+}
+#visualization {
+	height: 60vh;
+	padding: 12px;
+}
+#info-panel {
+	margin-left: 28px;
+	margin-bottom: 28px;
+	max-width: 500px;
+}
+.progress-segment {
+	height: 10px;
+	display: inline-block;
+}
+#info-progress {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+#info-progress > div {
+	width: fit-content;
+	margin: 0.5rem;
+}
+.progress-bar {
+	line-height: 0;
+}
+</style>
+<div id="diary">
+	<div id="visualization"></div>
+	<div id="info-panel">
+		<div id="info-entries"></div>
+		<div id="info-progress"></div>
+	</div>
+</div>
+<script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+<script type="text/javascript" src="/assets/js/diary.js"></script>

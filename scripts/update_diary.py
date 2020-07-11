@@ -81,6 +81,7 @@ class Diary:
                 BOUNDED_PROJECT_ET: dict(),
                 OPEN_ENDED_PROJECT_ET: dict(),
                 NOTE_ET: list(),
+                "timeline": dict(),
             }
 
         self.__diary_path = diary_path
@@ -101,6 +102,7 @@ class Diary:
         with open(self.__diary_path, "w") as f:
             json.dump(self.__storage, f, indent=4, sort_keys=True, default=str)
 
+
     @staticmethod
     def __parse_diary_entry(s: str, dt: datetime.datetime) -> Tuple[str, dict]:
         """
@@ -112,55 +114,74 @@ class Diary:
             return (
                 BOUNDED_PROJECT_ET,
                 {"name": expr[1], "parts": int(expr[2]), "unit": expr[3], "date": dt},
+                s
             )
         elif expr := BOUNDED_PROGRESS_RE.match(s):
             return (
                 BOUNDED_PROGRESS_ET,
                 {"name": expr[1], "parts": int(expr[2]), "date": dt},
+                s
             )
         elif expr := OPEN_ENDED_PROGRESS_RE.match(s):
             return (
                 OPEN_ENDED_PROGRESS_ET,
                 {"name": expr[2], "parts": int(expr[1]), "date": dt},
+                s
             )
         else:
-            return (NOTE_ET, {"text": s, "date": dt})
+            return (NOTE_ET, {"text": s, "date": dt}, s)
 
-    def __insert(self, entry_type, entry):
+    def __insert(self, entry_type, entry, plain):
         if entry_type == BOUNDED_PROJECT_ET:
             self.__storage[BOUNDED_PROJECT_ET][entry["name"].lower().strip()] = {
+                "name": entry["name"].strip(),
                 "parts": entry["parts"],
                 "unit": entry["unit"],
                 "progress": list(),
                 "date": entry["date"],
             }
+            self.__add_to_timeline(entry, plain)
         elif entry_type == BOUNDED_PROGRESS_ET:
-            try:
-                self.__storage[BOUNDED_PROJECT_ET][entry["name"].lower().strip()][
-                    "progress"
-                ].append({"parts": entry["parts"], "date": entry["date"]})
-            except KeyError as e:
-                print(
-                    f"Attempted to add BOUNDED_PROGRESS to unknown BOUNDED_PROJECT: {entry['name']}"
-                )
+            self.__storage[BOUNDED_PROJECT_ET][entry["name"].lower().strip()][
+                "progress"
+            ].append({"parts": entry["parts"], "date": entry["date"]})
+            self.__add_to_timeline(entry, plain)
         elif entry_type == OPEN_ENDED_PROGRESS_ET:
             if (
                 self.__storage[OPEN_ENDED_PROJECT_ET][entry["name"].lower().strip()]
                 is None
             ):
                 self.__storage[OPEN_ENDED_PROJECT_ET][entry["name"].lower().strip()] = {
+                    "name": entry["name"].strip(),
                     "progress": list(),
                     "date": entry["date"],
                 }
             self.__storage[OPEN_ENDED_PROJECT_ET][entry["name"].lower().strip()][
                 "progress"
             ].append({"parts": entry["parts"], "date": entry["date"]})
+            self.__add_to_timeline(entry, plain)
         elif entry_type == NOTE_ET:
             self.__storage[NOTE_ET].append(
                 dict(text=entry["text"].strip(), date=entry["date"])
             )
+            self.__add_to_timeline(entry, plain)
         else:
             raise NotImplementedError
+
+    def __add_to_timeline(self, entry, plain):
+        week = int(entry["date"].strftime("%Y%W"))
+        weekday = int(entry["date"].strftime("%w"))
+        date = entry["date"].strftime("%Y%W%w")
+        time = entry["date"].timestamp() * 1000
+
+        if self.__storage.get("timeline") is None:
+            self.__storage["timeline"] = dict()
+        
+        for d in range(0,7): # Create the entire week
+            if self.__storage["timeline"].get(f"{entry['date'].strftime('%Y%W')}{d}") is None:
+                self.__storage["timeline"][f"{entry['date'].strftime('%Y%W')}{d}"] = dict(week=week, weekday=d, entries=list())
+
+        self.__storage["timeline"][date]["entries"].append(dict(text=plain, time=time))
 
 
 class EmailConnection:
@@ -214,6 +235,17 @@ class EmailDiaryClient:
                     _, data = self.email_connection.imap.fetch(message_id, "(RFC822)")
                     message = email.message_from_bytes(data[0][1])
                     for part in message.walk():
+                        if file_name := part.get_filename():
+                            entry_text = part.get_payload(decode=True).decode("utf-8").strip()
+                            if date_tuple := email.utils.parsedate_tz(
+                                message["Date"]
+                            ):
+                                local_date = datetime.datetime.fromtimestamp(
+                                    email.utils.mktime_tz(date_tuple)
+                                )
+                            else:
+                                local_date = datetime.datetime.now()
+                            yield entry_text, local_date
                         if (payload := part.get_payload(decode=True)) is not None:
                             soup = BeautifulSoup(payload.decode(), "html.parser")
                             if (body := soup.body) is not None:
