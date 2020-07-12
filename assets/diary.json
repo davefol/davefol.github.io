@@ -7,6 +7,13 @@
             "progress": [],
             "unit": "parts"
         },
+        "data science from scratch": {
+            "date": "2020-07-11 21:27:52",
+            "name": "data science from scratch",
+            "parts": 25,
+            "progress": [],
+            "unit": "chapters"
+        },
         "mathematics for 3d": {
             "date": "2020-07-11 19:02:56",
             "name": "mathematics for 3D",
@@ -52,6 +59,14 @@
         {
             "date": "2020-07-11 19:54:53",
             "text": "Fiddling with the update_diary script and automating the commit changes."
+        },
+        {
+            "date": "2020-07-11 21:21:27",
+            "text": "Listened to an episode of revisionist history with Al about democratic lotteries. Al said someone presented on that topic to her PhD group. I wonder what else fits that criteria."
+        },
+        {
+            "date": "2020-07-11 21:25:51",
+            "text": "Need some new jeans."
         }
     ],
     "open ended projects": {},
@@ -119,6 +134,18 @@
                 {
                     "text": "Fiddling with the update_diary script and automating the commit changes.",
                     "time": 1594511693000.0
+                },
+                {
+                    "text": "Listened to an episode of revisionist history with Al about democratic lotteries. Al said someone presented on that topic to her PhD group. I wonder what else fits that criteria.",
+                    "time": 1594516887000.0
+                },
+                {
+                    "text": "Need some new jeans.",
+                    "time": 1594517151000.0
+                },
+                {
+                    "text": "New book data science from scratch with 25 chapters.",
+                    "time": 1594517272000.0
                 }
             ],
             "week": 202027,
