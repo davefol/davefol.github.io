@@ -84,6 +84,38 @@
         {
             "date": "2020-07-11 23:57:57",
             "text": "Cycle GAN solves the problem of mode collapse by introducing another GAN that takes the generated output and tries to detect if it's a valid input of the first GAN."
+        },
+        {
+            "date": "2020-07-11 19:09:37",
+            "text": "Yesterday Cliff (ParisXArt) sent me a voice message saying how much he liked the album. Today I put together 5 songs that are in progress for us to collaborate on. He'll be in the studio Monday."
+        },
+        {
+            "date": "2020-07-11 19:11:07",
+            "text": "I ordered a custom hoodie with the text \"Team Allison.\" on it. I specifically got it on a 4000ind blank after doing some research. Seems like those are the super thick ones I like."
+        },
+        {
+            "date": "2020-07-11 19:54:53",
+            "text": "Fiddling with the update_diary script and automating the commit changes."
+        },
+        {
+            "date": "2020-07-11 21:21:27",
+            "text": "Listened to an episode of revisionist history with Al about democratic lotteries. Al said someone presented on that topic to her PhD group. I wonder what else fits that criteria."
+        },
+        {
+            "date": "2020-07-11 21:25:51",
+            "text": "Need some new jeans."
+        },
+        {
+            "date": "2020-07-11 23:41:55",
+            "text": "What is freedom and how is it different from power or agency?"
+        },
+        {
+            "date": "2020-07-11 23:55:33",
+            "text": "Mode collapse: when the generator in a GAN just produces the same high scoring output to feed into the discriminator."
+        },
+        {
+            "date": "2020-07-11 23:57:57",
+            "text": "Cycle GAN solves the problem of mode collapse by introducing another GAN that takes the generated output and tries to detect if it's a valid input of the first GAN."
         }
     ],
     "open ended projects": {},
@@ -180,9 +212,105 @@
                 {
                     "text": "Cycle GAN solves the problem of mode collapse by introducing another GAN that takes the generated output and tries to detect if it's a valid input of the first GAN.",
                     "time": 1594526277000.0
+                },
+                {
+                    "text": "New book the functional art with 350 pages.",
+                    "time": 1594508551000.0
+                },
+                {
+                    "text": "New book mathematics for 3D with 342 pages.",
+                    "time": 1594508576000.0
+                },
+                {
+                    "text": "New course calculus in a nutshell with 19 parts.",
+                    "time": 1594508747000.0
+                },
+                {
+                    "text": "New book pytorch with 477 pages.",
+                    "time": 1594508815000.0
+                },
+                {
+                    "text": "New book monetary history with 700 pages.",
+                    "time": 1594508895000.0
+                },
+                {
+                    "text": "Yesterday Cliff (ParisXArt) sent me a voice message saying how much he liked the album. Today I put together 5 songs that are in progress for us to collaborate on. He'll be in the studio Monday.",
+                    "time": 1594508977000.0
+                },
+                {
+                    "text": "I ordered a custom hoodie with the text \"Team Allison.\" on it. I specifically got it on a 4000ind blank after doing some research. Seems like those are the super thick ones I like.",
+                    "time": 1594509067000.0
+                },
+                {
+                    "text": "Fiddling with the update_diary script and automating the commit changes.",
+                    "time": 1594511693000.0
+                },
+                {
+                    "text": "Listened to an episode of revisionist history with Al about democratic lotteries. Al said someone presented on that topic to her PhD group. I wonder what else fits that criteria.",
+                    "time": 1594516887000.0
+                },
+                {
+                    "text": "Need some new jeans.",
+                    "time": 1594517151000.0
+                },
+                {
+                    "text": "New book data science from scratch with 25 chapters.",
+                    "time": 1594517272000.0
+                },
+                {
+                    "text": "What is freedom and how is it different from power or agency?",
+                    "time": 1594525315000.0
+                },
+                {
+                    "text": "Mode collapse: when the generator in a GAN just produces the same high scoring output to feed into the discriminator.",
+                    "time": 1594526133000.0
+                },
+                {
+                    "text": "Cycle GAN solves the problem of mode collapse by introducing another GAN that takes the generated output and tries to detect if it's a valid input of the first GAN.",
+                    "time": 1594526277000.0
                 }
             ],
             "week": 202027,
+            "weekday": 6
+        },
+        "2020280": {
+            "entries": [
+                {
+                    "text": "Watched calculus in a nutshell to part 19.",
+                    "time": 1594530134000.0
+                }
+            ],
+            "week": 202028,
+            "weekday": 0
+        },
+        "2020281": {
+            "entries": [],
+            "week": 202028,
+            "weekday": 1
+        },
+        "2020282": {
+            "entries": [],
+            "week": 202028,
+            "weekday": 2
+        },
+        "2020283": {
+            "entries": [],
+            "week": 202028,
+            "weekday": 3
+        },
+        "2020284": {
+            "entries": [],
+            "week": 202028,
+            "weekday": 4
+        },
+        "2020285": {
+            "entries": [],
+            "week": 202028,
+            "weekday": 5
+        },
+        "2020286": {
+            "entries": [],
+            "week": 202028,
             "weekday": 6
         }
     }
