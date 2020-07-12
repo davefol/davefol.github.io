@@ -4,7 +4,12 @@
             "date": "2020-07-11 19:05:47",
             "name": "calculus in a nutshell",
             "parts": 19,
-            "progress": [],
+            "progress": [
+                {
+                    "date": "2020-07-12 01:02:14",
+                    "parts": 19
+                }
+            ],
             "unit": "parts"
         },
         "data science from scratch": {
@@ -67,12 +72,29 @@
         {
             "date": "2020-07-11 21:25:51",
             "text": "Need some new jeans."
+        },
+        {
+            "date": "2020-07-11 23:41:55",
+            "text": "What is freedom and how is it different from power or agency?"
+        },
+        {
+            "date": "2020-07-11 23:55:33",
+            "text": "Mode collapse: when the generator in a GAN just produces the same high scoring output to feed into the discriminator."
+        },
+        {
+            "date": "2020-07-11 23:57:57",
+            "text": "Cycle GAN solves the problem of mode collapse by introducing another GAN that takes the generated output and tries to detect if it's a valid input of the first GAN."
         }
     ],
     "open ended projects": {},
     "timeline": {
         "2020270": {
-            "entries": [],
+            "entries": [
+                {
+                    "text": "Watched calculus in a nutshell to part 19.",
+                    "time": 1594530134000.0
+                }
+            ],
             "week": 202027,
             "weekday": 0
         },
@@ -146,6 +168,18 @@
                 {
                     "text": "New book data science from scratch with 25 chapters.",
                     "time": 1594517272000.0
+                },
+                {
+                    "text": "What is freedom and how is it different from power or agency?",
+                    "time": 1594525315000.0
+                },
+                {
+                    "text": "Mode collapse: when the generator in a GAN just produces the same high scoring output to feed into the discriminator.",
+                    "time": 1594526133000.0
+                },
+                {
+                    "text": "Cycle GAN solves the problem of mode collapse by introducing another GAN that takes the generated output and tries to detect if it's a valid input of the first GAN.",
+                    "time": 1594526277000.0
                 }
             ],
             "week": 202027,
