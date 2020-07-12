@@ -169,17 +169,17 @@ class Diary:
             raise NotImplementedError
 
     def __add_to_timeline(self, entry, plain):
-        week = int(entry["date"].strftime("%Y%W"))
-        weekday = int(entry["date"].strftime("%w"))
-        date = entry["date"].strftime("%Y%W%w")
+        week = int(entry["date"].strftime("%Y%U"))
+        weekday = int(entry["date"].strftime("%U"))
+        date = entry["date"].strftime("%Y%U%w")
         time = entry["date"].timestamp() * 1000
 
         if self.__storage.get("timeline") is None:
             self.__storage["timeline"] = dict()
         
         for d in range(0,7): # Create the entire week
-            if self.__storage["timeline"].get(f"{entry['date'].strftime('%Y%W')}{d}") is None:
-                self.__storage["timeline"][f"{entry['date'].strftime('%Y%W')}{d}"] = dict(week=week, weekday=d, entries=list())
+            if self.__storage["timeline"].get(f"{entry['date'].strftime('%Y%U')}{d}") is None:
+                self.__storage["timeline"][f"{entry['date'].strftime('%Y%U')}{d}"] = dict(week=week, weekday=d, entries=list())
 
         self.__storage["timeline"][date]["entries"].append(dict(text=plain, time=time))
 
