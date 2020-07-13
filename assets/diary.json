@@ -19,6 +19,18 @@
             "progress": [],
             "unit": "chapters"
         },
+        "essence of calculus": {
+            "date": "2020-07-12 10:10:18",
+            "name": "essence of calculus",
+            "parts": 12,
+            "progress": [
+                {
+                    "date": "2020-07-12 14:31:10",
+                    "parts": 4
+                }
+            ],
+            "unit": "parts"
+        },
         "mathematics for 3d": {
             "date": "2020-07-11 19:02:56",
             "name": "mathematics for 3D",
@@ -30,14 +42,24 @@
             "date": "2020-07-11 19:08:15",
             "name": "monetary history",
             "parts": 700,
-            "progress": [],
+            "progress": [
+                {
+                    "date": "2020-07-12 15:24:23",
+                    "parts": 9
+                }
+            ],
             "unit": "pages"
         },
         "pytorch": {
             "date": "2020-07-11 19:06:55",
             "name": "pytorch",
             "parts": 477,
-            "progress": [],
+            "progress": [
+                {
+                    "date": "2020-07-12 15:28:11",
+                    "parts": 43
+                }
+            ],
             "unit": "pages"
         },
         "the functional art": {
@@ -80,6 +102,30 @@
         {
             "date": "2020-07-11 23:57:57",
             "text": "Cycle GAN solves the problem of mode collapse by introducing another GAN that takes the generated output and tries to detect if it's a valid input of the first GAN."
+        },
+        {
+            "date": "2020-07-12 10:15:37",
+            "text": "We can derive the formula for the area of a circle, pi*r^2 by slicing the circle into several concentric rings. Then we take each of those rings and lay down out flat. We can approximate the area of those rings as the length of the ring (2*pi*t) multiplied by the height, which is the slice interval (dr). When we lay all of the slices together they form a triangle with area r(2*pi*r)/2."
+        },
+        {
+            "date": "2020-07-12 12:35:42",
+            "text": "Sin(x) is the distance above the origin of we go x distance along the arc of the unit circle. Cos(x) is the distance to the right of the origin. So if we go pi/2 we've travelled from the right of the circle to the top of the circle so sin(pi/2) is 1. When we are the right of the unit circle x=0 since we haven't travelled anywhere and cos(0) = 1."
+        },
+        {
+            "date": "2020-07-12 12:37:09",
+            "text": "The d(sin(x)) = cos(x)"
+        },
+        {
+            "date": "2020-07-12 14:54:58",
+            "text": "Added AlleleCount type to rust genomics. Basically a way to represent NA that plays nicely with calculations. Seems like I'll need to add an AlleleFreq type as well. I wonder if there is a way to do this with Option types instead. I don't think so since the compiler can't reason about adding traits you didn't define to types you didn't define so I think I need to make a brand spanking new type."
+        },
+        {
+            "date": "2020-07-12 15:17:26",
+            "text": "Specie is money in the form of coins rather than notes."
+        },
+        {
+            "date": "2020-07-12 16:29:55",
+            "text": "Nathan Tankus\u2019s news letter today talked about the need for congress to extend the unemployment boost. One thing I never thought about was that with people getting kicked out of houses, maintenance of the house is decreased and that could lead to breeding grounds for mosquitos. There are many externalities that I haven\u2019t considered."
         }
     ],
     "open ended projects": {},
@@ -181,6 +227,46 @@
                 {
                     "text": "Watched calculus in a nutshell to part 1.",
                     "time": 1594530134000.0
+                },
+                {
+                    "text": "Started series essence of calculus with 12 parts.",
+                    "time": 1594563018000.0
+                },
+                {
+                    "text": "We can derive the formula for the area of a circle, pi*r^2 by slicing the circle into several concentric rings. Then we take each of those rings and lay down out flat. We can approximate the area of those rings as the length of the ring (2*pi*t) multiplied by the height, which is the slice interval (dr). When we lay all of the slices together they form a triangle with area r(2*pi*r)/2.",
+                    "time": 1594563337000.0
+                },
+                {
+                    "text": "Sin(x) is the distance above the origin of we go x distance along the arc of the unit circle. Cos(x) is the distance to the right of the origin. So if we go pi/2 we've travelled from the right of the circle to the top of the circle so sin(pi/2) is 1. When we are the right of the unit circle x=0 since we haven't travelled anywhere and cos(0) = 1.",
+                    "time": 1594571742000.0
+                },
+                {
+                    "text": "The d(sin(x)) = cos(x)",
+                    "time": 1594571829000.0
+                },
+                {
+                    "text": "Watched essence of calculus to part 4.",
+                    "time": 1594578670000.0
+                },
+                {
+                    "text": "Added AlleleCount type to rust genomics. Basically a way to represent NA that plays nicely with calculations. Seems like I'll need to add an AlleleFreq type as well. I wonder if there is a way to do this with Option types instead. I don't think so since the compiler can't reason about adding traits you didn't define to types you didn't define so I think I need to make a brand spanking new type.",
+                    "time": 1594580098000.0
+                },
+                {
+                    "text": "Specie is money in the form of coins rather than notes.",
+                    "time": 1594581446000.0
+                },
+                {
+                    "text": "Read monetary history to page 9.",
+                    "time": 1594581863000.0
+                },
+                {
+                    "text": "Read pytorch to page 43.",
+                    "time": 1594582091000.0
+                },
+                {
+                    "text": "Nathan Tankus\u2019s news letter today talked about the need for congress to extend the unemployment boost. One thing I never thought about was that with people getting kicked out of houses, maintenance of the house is decreased and that could lead to breeding grounds for mosquitos. There are many externalities that I haven\u2019t considered.",
+                    "time": 1594585795000.0
                 }
             ],
             "week": 202028,
