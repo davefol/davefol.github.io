@@ -10,8 +10,8 @@
                     "parts": 1
                 }
             ],
-            "unit": "parts",
-	    "status": "cancelled"
+            "status": "cancelled",
+            "unit": "parts"
         },
         "data science from scratch": {
             "date": "2020-07-11 21:27:52",
@@ -34,6 +34,13 @@
                     "parts": 12
                 }
             ],
+            "unit": "parts"
+        },
+        "essence of linear algebra": {
+            "date": "2020-07-14 17:59:48",
+            "name": "essence of linear algebra",
+            "parts": 15,
+            "progress": [],
             "unit": "parts"
         },
         "mathematics for 3d": {
@@ -159,6 +166,14 @@
         {
             "date": "2020-07-13 21:54:16",
             "text": "After brushing up on my integration skills, its super obvious that starlings approximation for the natural log of a factorial is in part just the integral of the natural log of that number (without the factorial). Again this seems super obvious when you take into account that multiplication becomes addition in ln and that adding many numbers together is like doing an integral. It also explains why the approximation gets better for larger n. It might also explain that weird error correcting term."
+        },
+        {
+            "date": "2020-07-14 11:03:56",
+            "text": "The PMF of the binomial distribution is actually really easy to remember if you work through it logically. Lets first look at the binomial coefficient, n choose x. This is the number of ways we can pick x objects from n objects. For example, if we are flipping a coin 10 times. 10 choose 3 is the number of ways we could get 3 heads out of that sequence. Great so we have the number of events in the event space that we want to count. Next up, what is the probability of those events? Lets say p is the probability of a success on any given trial. Then if X = 3 and n = 10 we need to have p*p*p or p^3 success and (1-p)^7 failures. The odds of both of those happening (multiply them together) is the odds of one of our events under consideration. So if we multiply that by the number of events we should get the probability of flipping exactly 3 heads over 10 flips. Brilliant. To recap thats (n choose x)*(p^x)*(1-p)^(n-x)."
+        },
+        {
+            "date": "2020-07-14 15:25:51",
+            "text": "Grinded through my backlog of anki cards while going through the proof for any cards I got wrong. Mostly the derivative of inverse trig functions."
         }
     ],
     "open ended projects": {},
@@ -344,6 +359,18 @@
                 {
                     "text": "Read monetary history to page 14.",
                     "time": 1594702005000.0
+                },
+                {
+                    "text": "The PMF of the binomial distribution is actually really easy to remember if you work through it logically. Lets first look at the binomial coefficient, n choose x. This is the number of ways we can pick x objects from n objects. For example, if we are flipping a coin 10 times. 10 choose 3 is the number of ways we could get 3 heads out of that sequence. Great so we have the number of events in the event space that we want to count. Next up, what is the probability of those events? Lets say p is the probability of a success on any given trial. Then if X = 3 and n = 10 we need to have p*p*p or p^3 success and (1-p)^7 failures. The odds of both of those happening (multiply them together) is the odds of one of our events under consideration. So if we multiply that by the number of events we should get the probability of flipping exactly 3 heads over 10 flips. Brilliant. To recap thats (n choose x)*(p^x)*(1-p)^(n-x).",
+                    "time": 1594739036000.0
+                },
+                {
+                    "text": "Grinded through my backlog of anki cards while going through the proof for any cards I got wrong. Mostly the derivative of inverse trig functions.",
+                    "time": 1594754751000.0
+                },
+                {
+                    "text": "Started series essence of linear algebra with 15 parts.",
+                    "time": 1594763988000.0
                 }
             ],
             "week": 202028,
