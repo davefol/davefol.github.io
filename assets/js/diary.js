@@ -160,7 +160,10 @@ d3.json("/assets/diary.json")
 				for (let [idx, progress] of project.progress.entries()) {
 					let segment = document.createElement("span");
 					segment.classList.add("progress-segment");
-					segment.style.width = `${(progress.parts / project.parts) * 100}%`;
+					if (idx == 0)
+						segment.style.width = `${(progress.parts / project.parts) * 100}%`;
+					else
+						segment.style.width = `${(progress.parts - project.progress[idx - 1].parts) / project.parts * 100}%`;
 					segment.style.backgroundColor = colorScale(idx);
 					progressBar.appendChild(segment);
 				}
@@ -199,7 +202,10 @@ d3.json("/assets/diary.json")
 					for (let [idx, progress] of project.progress.entries()) {
 						let segment = document.createElement("span");
 						segment.classList.add("progress-segment");
-						segment.style.width = `${(progress.parts / project.parts) * 100}%`;
+						if (idx == 0)
+							segment.style.width = `${(progress.parts / project.parts) * 100}%`;
+						else
+							segment.style.width = `${(progress.parts - project.progress[idx - 1].parts) / project.parts * 100}%`;
 						segment.style.backgroundColor = colorScale(idx);
 						progressBar.appendChild(segment);
 					}
