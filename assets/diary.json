@@ -27,6 +27,10 @@
                 {
                     "date": "2020-07-12 14:31:10",
                     "parts": 4
+                },
+                {
+                    "date": "2020-07-13 17:19:14",
+                    "parts": 12
                 }
             ],
             "unit": "parts"
@@ -46,6 +50,10 @@
                 {
                     "date": "2020-07-12 15:24:23",
                     "parts": 9
+                },
+                {
+                    "date": "2020-07-14 00:46:45",
+                    "parts": 14
                 }
             ],
             "unit": "pages"
@@ -126,6 +134,30 @@
         {
             "date": "2020-07-12 16:29:55",
             "text": "Nathan Tankus\u2019s news letter today talked about the need for congress to extend the unemployment boost. One thing I never thought about was that with people getting kicked out of houses, maintenance of the house is decreased and that could lead to breeding grounds for mosquitos. There are many externalities that I haven\u2019t considered."
+        },
+        {
+            "date": "2020-07-13 10:05:12",
+            "text": "I got up a little later than usual. Stayed in bed read emails. Unsubscribes from a few lists, chessable, some rapper from Brooklyn. The dog started whining at 9:45. What's funny is she's not whining to be walked or fed, although she would love that, she's whining for someone to come out and hang. She'll stop whining if you just sit in the same room as her. Nathan Tankus's newsletter just popped in my inbox. I think I'll feed the dog, read it while she's eating, then take her for a walk before it gets to hot."
+        },
+        {
+            "date": "2020-07-13 10:40:19",
+            "text": "It seems that ass the US slides towards brave new world Hong Kong slides towards 1984"
+        },
+        {
+            "date": "2020-07-13 11:21:28",
+            "text": "soup (v.)\r\n\r\n\"increase the horsepower of an engine,\" 1921, probably from soup (n.) in slang sense of \"narcotic injected into horses to make them run faster\" (1911), influenced by supercharge (v.)."
+        },
+        {
+            "date": "2020-07-13 20:22:48",
+            "text": "Brushed up on some pretty basic trig. Felt pretty good. The goal is to reteach myself enough math to really grok machine learning and stats papers."
+        },
+        {
+            "date": "2020-07-13 21:51:26",
+            "text": "Didn\u2019t do any serious programing today. I did find out that cron doesn\u2019t have access to the git credentials. Might have to setup a different user, configure it with my credentials, or try another method. Think I\u2019ll read some of the pytorch book."
+        },
+        {
+            "date": "2020-07-13 21:54:16",
+            "text": "After brushing up on my integration skills, its super obvious that starlings approximation for the natural log of a factorial is in part just the integral of the natural log of that number (without the factorial). Again this seems super obvious when you take into account that multiplication becomes addition in ln and that adding many numbers together is like doing an integral. It also explains why the approximation gets better for larger n. It might also explain that weird error correcting term."
         }
     ],
     "open ended projects": {},
@@ -273,12 +305,46 @@
             "weekday": 0
         },
         "2020281": {
-            "entries": [],
+            "entries": [
+                {
+                    "text": "I got up a little later than usual. Stayed in bed read emails. Unsubscribes from a few lists, chessable, some rapper from Brooklyn. The dog started whining at 9:45. What's funny is she's not whining to be walked or fed, although she would love that, she's whining for someone to come out and hang. She'll stop whining if you just sit in the same room as her. Nathan Tankus's newsletter just popped in my inbox. I think I'll feed the dog, read it while she's eating, then take her for a walk before it gets to hot.",
+                    "time": 1594649112000.0
+                },
+                {
+                    "text": "It seems that ass the US slides towards brave new world Hong Kong slides towards 1984",
+                    "time": 1594651219000.0
+                },
+                {
+                    "text": "soup (v.)\r\n\r\n\"increase the horsepower of an engine,\" 1921, probably from soup (n.) in slang sense of \"narcotic injected into horses to make them run faster\" (1911), influenced by supercharge (v.).",
+                    "time": 1594653688000.0
+                },
+                {
+                    "text": "Watched essence of calculus to part 12.",
+                    "time": 1594675154000.0
+                },
+                {
+                    "text": "Brushed up on some pretty basic trig. Felt pretty good. The goal is to reteach myself enough math to really grok machine learning and stats papers.",
+                    "time": 1594686168000.0
+                },
+                {
+                    "text": "Didn\u2019t do any serious programing today. I did find out that cron doesn\u2019t have access to the git credentials. Might have to setup a different user, configure it with my credentials, or try another method. Think I\u2019ll read some of the pytorch book.",
+                    "time": 1594691486000.0
+                },
+                {
+                    "text": "After brushing up on my integration skills, its super obvious that starlings approximation for the natural log of a factorial is in part just the integral of the natural log of that number (without the factorial). Again this seems super obvious when you take into account that multiplication becomes addition in ln and that adding many numbers together is like doing an integral. It also explains why the approximation gets better for larger n. It might also explain that weird error correcting term.",
+                    "time": 1594691656000.0
+                }
+            ],
             "week": 202028,
             "weekday": 1
         },
         "2020282": {
-            "entries": [],
+            "entries": [
+                {
+                    "text": "Read monetary history to page 14.",
+                    "time": 1594702005000.0
+                }
+            ],
             "week": 202028,
             "weekday": 2
         },
