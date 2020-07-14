@@ -87,7 +87,7 @@ d3.json("/assets/diary.json")
 		Vis.svg = d3.select("body").select("#diary").select("#visualization")
 			.append("svg")
 			.attr("width", Vis.width + Vis.padding + 2)
-			.attr("height", Vis.height + Vis.padding);
+			.attr("height", Vis.height + Vis.padding + 4);
 
 
 		// ----------------------------
@@ -99,7 +99,7 @@ d3.json("/assets/diary.json")
 			.append("rect");
 
 		Vis.days.attr("x", (day, i) => Vis.xScale(day.weekday)+1)
-			.attr("y", (day, i) => Vis.yScale(day.week))
+			.attr("y", (day, i) => Vis.yScale(day.week) + 1)
 			.attr("rx", 6)
 			.attr("ry", 6)
 			.attr("width", (day, i) => Vis.squareWidth)
