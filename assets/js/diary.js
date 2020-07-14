@@ -169,6 +169,12 @@ d3.json("/assets/diary.json")
 				}
 				return title.outerHTML + progressBar.outerHTML;
 			})
+			.attr("class", (project, i) => {
+				if (typeof project.status != "undefined")
+					return `project-status-${project.status}`
+				else
+					return ""
+			})
 			
 
 		// ----------------------------
@@ -210,6 +216,12 @@ d3.json("/assets/diary.json")
 						progressBar.appendChild(segment);
 					}
 					return title.outerHTML + progressBar.outerHTML;
+				})
+				.attr("class", (project, i) => {
+					if (typeof project.status != "undefined")
+						return `project-status-${project.status}`
+					else
+						return ""
 				});
 
 		});

@@ -10,7 +10,8 @@
                     "parts": 1
                 }
             ],
-            "unit": "parts"
+            "unit": "parts",
+	    "status": "cancelled"
         },
         "data science from scratch": {
             "date": "2020-07-11 21:27:52",
