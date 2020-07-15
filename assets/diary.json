@@ -32,7 +32,6 @@
                 {
                     "date": "2020-07-13 17:19:14",
                     "parts": 12
-<<<<<<< Updated upstream
                 }
             ],
             "unit": "parts"
@@ -45,8 +44,6 @@
                 {
                     "date": "2020-07-15 01:48:41",
                     "parts": 9
-=======
->>>>>>> Stashed changes
                 }
             ],
             "unit": "parts"
@@ -174,7 +171,6 @@
         {
             "date": "2020-07-13 21:54:16",
             "text": "After brushing up on my integration skills, its super obvious that starlings approximation for the natural log of a factorial is in part just the integral of the natural log of that number (without the factorial). Again this seems super obvious when you take into account that multiplication becomes addition in ln and that adding many numbers together is like doing an integral. It also explains why the approximation gets better for larger n. It might also explain that weird error correcting term."
-<<<<<<< Updated upstream
         },
         {
             "date": "2020-07-14 11:03:56",
@@ -187,8 +183,6 @@
         {
             "date": "2020-07-14 23:38:15",
             "text": "Split first in a 12 person poker tournament today. I made less than my hourly rate I think but hey, it was fun."
-=======
->>>>>>> Stashed changes
         }
     ],
     "open ended projects": {},
@@ -374,7 +368,6 @@
                 {
                     "text": "Read monetary history to page 14.",
                     "time": 1594702005000.0
-<<<<<<< Updated upstream
                 },
                 {
                     "text": "The PMF of the binomial distribution is actually really easy to remember if you work through it logically. Lets first look at the binomial coefficient, n choose x. This is the number of ways we can pick x objects from n objects. For example, if we are flipping a coin 10 times. 10 choose 3 is the number of ways we could get 3 heads out of that sequence. Great so we have the number of events in the event space that we want to count. Next up, what is the probability of those events? Lets say p is the probability of a success on any given trial. Then if X = 3 and n = 10 we need to have p*p*p or p^3 success and (1-p)^7 failures. The odds of both of those happening (multiply them together) is the odds of one of our events under consideration. So if we multiply that by the number of events we should get the probability of flipping exactly 3 heads over 10 flips. Brilliant. To recap thats (n choose x)*(p^x)*(1-p)^(n-x).",
@@ -391,8 +384,6 @@
                 {
                     "text": "Split first in a 12 person poker tournament today. I made less than my hourly rate I think but hey, it was fun.",
                     "time": 1594784295000.0
-=======
->>>>>>> Stashed changes
                 }
             ],
             "week": 202028,
