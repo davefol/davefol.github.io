@@ -1,5 +1,12 @@
 {
     "bounded projects": {
+        "c231n": {
+            "date": "2020-07-16 12:00:12",
+            "name": "c231n",
+            "parts": 16,
+            "progress": [],
+            "unit": "parts"
+        },
         "calculus in a nutshell": {
             "date": "2020-07-11 19:05:47",
             "name": "calculus in a nutshell",
@@ -67,6 +74,10 @@
                 {
                     "date": "2020-07-14 00:46:45",
                     "parts": 14
+                },
+                {
+                    "date": "2020-07-15 18:59:13",
+                    "parts": 28
                 }
             ],
             "unit": "pages"
@@ -79,6 +90,10 @@
                 {
                     "date": "2020-07-12 15:28:11",
                     "parts": 43
+                },
+                {
+                    "date": "2020-07-15 23:34:53",
+                    "parts": 81
                 }
             ],
             "unit": "pages"
@@ -394,13 +409,26 @@
                 {
                     "text": "Watched essence of linear algebra to part 9.",
                     "time": 1594792121000.0
+                },
+                {
+                    "text": "Read monetary history to page 28.",
+                    "time": 1594853953000.0
+                },
+                {
+                    "text": "Read pytorch to page 81.",
+                    "time": 1594870493000.0
                 }
             ],
             "week": 202028,
             "weekday": 3
         },
         "2020284": {
-            "entries": [],
+            "entries": [
+                {
+                    "text": "Started course c231n with 16 parts.",
+                    "time": 1594915212000.0
+                }
+            ],
             "week": 202028,
             "weekday": 4
         },
