@@ -4,7 +4,12 @@
             "date": "2020-07-16 12:00:12",
             "name": "c231n",
             "parts": 16,
-            "progress": [],
+            "progress": [
+                {
+                    "date": "2020-07-16 23:50:05",
+                    "parts": 1
+                }
+            ],
             "unit": "parts"
         },
         "calculus in a nutshell": {
@@ -94,6 +99,10 @@
                 {
                     "date": "2020-07-15 23:34:53",
                     "parts": 81
+                },
+                {
+                    "date": "2020-07-16 23:49:34",
+                    "parts": 172
                 }
             ],
             "unit": "pages"
@@ -198,6 +207,10 @@
         {
             "date": "2020-07-14 23:38:15",
             "text": "Split first in a 12 person poker tournament today. I made less than my hourly rate I think but hey, it was fun."
+        },
+        {
+            "date": "2020-07-16 12:31:35",
+            "text": "Matt Levine\u2019s news letter today talked about how vaccine trial results and airline stocks are very correlated and the ramifications wrt insider trading."
         }
     ],
     "open ended projects": {},
@@ -427,6 +440,18 @@
                 {
                     "text": "Started course c231n with 16 parts.",
                     "time": 1594915212000.0
+                },
+                {
+                    "text": "Matt Levine\u2019s news letter today talked about how vaccine trial results and airline stocks are very correlated and the ramifications wrt insider trading.",
+                    "time": 1594917095000.0
+                },
+                {
+                    "text": "Read pytorch to page 172.",
+                    "time": 1594957774000.0
+                },
+                {
+                    "text": "Watched c231n to part 1.",
+                    "time": 1594957805000.0
                 }
             ],
             "week": 202028,
