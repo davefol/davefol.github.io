@@ -12,6 +12,10 @@
                 {
                     "date": "2020-07-17 23:14:16",
                     "parts": 3
+                },
+                {
+                    "date": "2020-07-19 15:17:07",
+                    "parts": 5
                 }
             ],
             "unit": "parts"
@@ -482,6 +486,46 @@
         "2020286": {
             "entries": [],
             "week": 202028,
+            "weekday": 6
+        },
+        "2020290": {
+            "entries": [
+                {
+                    "text": "Watched c231n to part 5.",
+                    "time": 1595186227000.0
+                }
+            ],
+            "week": 202029,
+            "weekday": 0
+        },
+        "2020291": {
+            "entries": [],
+            "week": 202029,
+            "weekday": 1
+        },
+        "2020292": {
+            "entries": [],
+            "week": 202029,
+            "weekday": 2
+        },
+        "2020293": {
+            "entries": [],
+            "week": 202029,
+            "weekday": 3
+        },
+        "2020294": {
+            "entries": [],
+            "week": 202029,
+            "weekday": 4
+        },
+        "2020295": {
+            "entries": [],
+            "week": 202029,
+            "weekday": 5
+        },
+        "2020296": {
+            "entries": [],
+            "week": 202029,
             "weekday": 6
         }
     }
