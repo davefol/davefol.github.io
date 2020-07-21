@@ -119,6 +119,10 @@
                 {
                     "date": "2020-07-19 15:59:31",
                     "parts": 234
+                },
+                {
+                    "date": "2020-07-20 23:28:31",
+                    "parts": 300
                 }
             ],
             "unit": "pages"
@@ -227,6 +231,10 @@
         {
             "date": "2020-07-16 12:31:35",
             "text": "Matt Levine\u2019s news letter today talked about how vaccine trial results and airline stocks are very correlated and the ramifications wrt insider trading."
+        },
+        {
+            "date": "2020-07-20 23:28:25",
+            "text": "Read Matt Levin\u2019s newsletter. First bit is about how index funds constitute a de facto monopoly and how entrance into the S&P 500 increases the entrants stock but increases the competitors already in the S&P 500 even more."
         }
     ],
     "open ended projects": {},
@@ -507,7 +515,16 @@
             "weekday": 0
         },
         "2020291": {
-            "entries": [],
+            "entries": [
+                {
+                    "text": "Read Matt Levin\u2019s newsletter. First bit is about how index funds constitute a de facto monopoly and how entrance into the S&P 500 increases the entrants stock but increases the competitors already in the S&P 500 even more.",
+                    "time": 1595302105000.0
+                },
+                {
+                    "text": "Read pytorch to page 300.",
+                    "time": 1595302111000.0
+                }
+            ],
             "week": 202029,
             "weekday": 1
         },
