@@ -4,8 +4,9 @@ title: About Me
 ---
 
 Hi, my name is David Folarin but everyone calls me Dave Fol. 
-I'm an embedded engineer working at Caterpillar on small track type tractors,
-small wheel loaders, telematics, and whatever else they decide to throw at me. 
+I'm ~~an embedded engineer working at Caterpillar on small track type tractors,
+small wheel loaders, telematics, and whatever else they decide to throw at me~~
+a software engineer at CoVar working on ML for DoD. 
 
 I graduated from Cornell University with a degree in Psychology. While
 at Cornell I had the oppurtunity to be mentored by the brilliant [Shimon Edelman](http://kybele.psych.cornell.edu/~edelman/),
