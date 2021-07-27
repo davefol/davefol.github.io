@@ -1,0 +1,152 @@
+{
+  "selectedTemplate": 1,
+  "headings": {
+    "skills": "Skills",
+    "projects": "Projects",
+    "awards": "",
+    "education": "Education",
+    "work": "Experience"
+  },
+  "basics": {
+    "name": "David Folarin",
+    "email": "dof5@cornell.edu",
+    "location": {
+      "address": "Durham, NC"
+    },
+    "phone": "(318) 787-1282",
+    "website": "davefol.com"
+  },
+  "education": [
+    {
+      "location": "Ithaca, NY",
+      "area": "Computational Psychology",
+      "studyType": "BA",
+      "institution": "Cornell University",
+      "endDate": "May 2018",
+      "startDate": "August 2013"
+    },
+    {
+      "institution": "Open University",
+      "location": "Milton Keynes, England",
+      "studyType": "BSc (Hons)",
+      "area": "Mathematics",
+      "startDate": "Oct 2021",
+      "endDate": "Pursuing"
+    }
+  ],
+  "work": [
+    {
+      "company": "CoVar Applied Technologies",
+      "location": "Durham, NC",
+      "position": "Software Engineer",
+      "website": "",
+      "endDate": "Present",
+      "highlights": [
+        "Developed Computer Vision Algorithms",
+        "3D rendering and aided target recognition for US Army",
+        "Full stack application development for DARPA",
+        "Aided target recognition and explainable AI for NVESD"
+      ],
+      "startDate": "July 2020"
+    },
+    {
+      "highlights": [
+        "Solvde high cost in production bugs",
+        "Developed testing program for Telmatics product",
+        "Designed plant model for hardware integrations",
+        "Led small track type tractor and small wheel loader development"
+      ],
+      "company": "Caterpillar",
+      "position": "Associate Engineer",
+      "location": "Clayton, NC",
+      "startDate": "August 2019",
+      "endDate": "July 2020"
+    },
+    {
+      "highlights": [
+        "Analyzed basketball shot data in support of Professor Gilovich's Hot Hand research program",
+        "Suggested and implemented new analysis in response to critiques of prior publications"
+      ],
+      "company": "Psychology Dept. Cornell University",
+      "position": "Data Analyst",
+      "location": "Ithaca, NY",
+      "startDate": "August 2018",
+      "endDate": "May 2018"
+    },
+    {
+      "highlights": [
+        "Created survey website to collect sentiment data about Facebook algorithms",
+        "Implemented pairwise ranking algorithm to analyze survey data",
+        "Managed Amazon Mechanical Turk repsonses",
+        "Created text munging scripts to reduce research assistants' workload"
+      ],
+      "company": "Social Media Lab, Cornell University",
+      "position": "Research Assistant",
+      "location": "Ithaca, NY",
+      "startDate": "August 2017",
+      "endDate": "May 2017"
+    }
+  ],
+  "skills": [
+    {
+      "level": "",
+      "keywords": [
+        "Python",
+        "C++",
+        "Javscript",
+        "Rust",
+        "Bash",
+        "Matlab & Simulink"
+      ],
+      "name": "Programming Languages"
+    },
+    {
+      "keywords": [
+        "Fusion 360"
+      ],
+      "name": "CAD"
+    },
+    {
+      "keywords": [
+        "Object Detection",
+        "Identification",
+        "Tracking",
+        "3D rendering"
+      ],
+      "name": "ML/AI"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Poppr genomics library",
+      "description": "",
+      "url": "",
+      "keywords": [
+        ""
+      ]
+    },
+    {
+      "keywords": [
+        ""
+      ],
+      "name": "Led seminars for Cornell Data Science Club"
+    }
+  ],
+  "awards": [
+    {
+      "title": "",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    }
+  ],
+  "sections": [
+    "templates",
+    "profile",
+    "education",
+    "skills",
+    "work",
+    "projects",
+    "awards"
+  ]
+}
